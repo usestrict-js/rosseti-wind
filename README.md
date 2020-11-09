@@ -1,5 +1,4 @@
-# rosseti-wind
-Хакатон 2020
+# Россети (Хакатон)
 
 [Задачи(Kanban борд)](https://github.com/usestrict-js/rosseti-wind/projects/1)
 
