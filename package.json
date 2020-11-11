@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /rosseti-wind --no-content-hash",
     "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "repository": {
