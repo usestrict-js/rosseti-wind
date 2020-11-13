@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Card, Elevation, Radio, RadioGroup} from "@blueprintjs/core";
+import {Card, Elevation, Radio, RadioGroup} from "@blueprintjs/core";
 
 export const Exam = () => <Card interactive={true} elevation={Elevation.TWO}>
     <RadioGroup
