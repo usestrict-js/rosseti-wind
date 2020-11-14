@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from "react";
 import { dia, ui, shapes } from '@clientio/rappid';
 
-export const Board = () => {
+const Emulator = () => {
   const canvas = useRef(null);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export const Board = () => {
       size: { width: 200, height: 50},
       attrs: {
         label: {
-          text: 'Коммутатор'
+          text: 'Коммутатор1'
         }
       }
     });
@@ -75,46 +75,4 @@ export const Board = () => {
   return <div className="canvas" ref={canvas}/>;
 };
 
-// class Board extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.graph = new joint.dia.Graph();
-//   }
-//
-//   componentDidMount() {
-//     this.paper = new joint.dia.Paper({
-//       el: ReactDOM.findDOMNode(this.refs.paper),
-//       width: 600,
-//       height: 200,
-//       model: this.graph,
-//       gridSize: 1
-//     });
-//
-//     const rect = new joint.shapes.basic.Rect({
-//       position: { x: 100, y: 30 },
-//       size: { width: 100, height: 30 },
-//       attrs: {
-//         rect: { fill: 'blue' },
-//         text: { text: 'my box', fill: 'white' }
-//       }
-//     });
-//
-//     const rect2 = rect.clone();
-//     rect2.translate(300);
-//
-//     const link = new joint.dia.Link({
-//       source: { id: rect.id },
-//       target: { id: rect2.id }
-//     });
-//
-//     this.graph.addCells([rect, rect2, link]);
-//   }
-//
-//   render() {
-//     return <div>
-//       <h1>Hello world</h1><div ref="paper"></div>
-//     </div>;
-//   }
-// }
-
-export default Board;
+export default Emulator;

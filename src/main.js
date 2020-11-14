@@ -1,18 +1,24 @@
-import React, {Fragment} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { Card, Elevation } from "@blueprintjs/core";
-import Exam from "./exam";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Auth from "./auth";
-import Board from "./board";
+import Test from "./test";
+import Emulator from "./emulator";
 
 const Main = () => (
-    <Fragment>
-      <Board />
-  <Card interactive={true} elevation={Elevation.TWO}>
-    <Auth />
-    <Exam/>
-  </Card>
-    </Fragment>
+  <BrowserRouter>
+      <Switch>
+        <Route path="/" exact>
+          <Auth />
+        </Route>
+        <Route path="/emulator">
+          <Emulator />
+        </Route>
+        <Route path="/test">
+          <Test />
+        </Route>
+      </Switch>
+  </BrowserRouter>
 );
 
 const App = document.getElementById("app");

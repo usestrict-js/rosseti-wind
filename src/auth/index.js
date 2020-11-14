@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Card, FormGroup, InputGroup } from "@blueprintjs/core";
+import { Link } from "react-router-dom";
 
 const Auth = () => (
-  <Card>
+  <Card style={{ maxWidth: "400px" }}>
     <FormGroup
       helperText="Введите Ваши Фамилию Имя Отчество полностью через пробел"
       label="ФИО"
@@ -21,7 +22,9 @@ const Auth = () => (
       <InputGroup id="group-number" placeholder="номер Вашей группы" />
     </FormGroup>
 
-    <Button icon="key-enter">ВОЙТИ</Button>
+    <Button icon="key-enter">
+      <Link to="/test">ВОЙТИ</Link>
+    </Button>
   </Card>
 );
 

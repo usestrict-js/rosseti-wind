@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, Elevation, Radio, RadioGroup } from "@blueprintjs/core";
+import { Card, Radio, RadioGroup } from "@blueprintjs/core";
 
-const Exam = () => (
-  <Card interactive={true} elevation={Elevation.TWO}>
+const Test = () => (
+  <Card>
     <RadioGroup label="1. Как расшифровывается аббревиатура IED?">
       <Radio label="Информационно электронное реле" value="one" />
       <Radio label="Интеллектуальное устройство учета" value="two" />
@@ -116,4 +116,4 @@ const Exam = () => (
   </Card>
 );
 
-export default Exam;
+export default Test;
