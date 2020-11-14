@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Auth from "./auth";
 import Test from "./test";
 import Emulator from "./emulator";
 
 const Main = () => (
-  <BrowserRouter>
+  <HashRouter basename='/'>
       <Switch>
         <Route path="/" exact>
           <Auth />
@@ -18,7 +18,7 @@ const Main = () => (
           <Test />
         </Route>
       </Switch>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 const App = document.getElementById("app");
