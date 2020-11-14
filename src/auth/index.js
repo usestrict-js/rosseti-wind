@@ -23,7 +23,7 @@ const Auth = () => (
     </FormGroup>
 
     <Button large icon="key-enter">
-      <Link to="/test">ВОЙТИ</Link>
+      <Link to="/tasks">Войти</Link>
     </Button>
   </Card>
 );
