@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { Radio, RadioGroup, Card } from "@blueprintjs/core";
 
 const Question = ({ id, text, variants }) => (
-  <Card><RadioGroup label={`${id}. ${text}?`}>
-    {variants.map(({ id, value }) => (
-      <Radio label={value} value={id} />
-    ))}
-  </RadioGroup>
-  </Card>
+    <Card style={{width: '100%', margin: '10px', fontSize: '20px'}}>
+      <RadioGroup label={`${id}. ${text}?`}>
+        {variants.map(({ id, value }) => (
+          <Radio label={value} value={id} />
+        ))}
+      </RadioGroup>
+    </Card>
 );
 
 Question.propTypes = {
