@@ -1,15 +1,15 @@
 import React, {Fragment} from "react";
 import ReactDOM from "react-dom";
 import { Card, Elevation } from "@blueprintjs/core";
-import { Exam } from "./exam";
-import { Authen } from "./authen";
+import Exam from "./exam";
+import Auth from "./auth";
 import Board from "./board";
 
 const Main = () => (
     <Fragment>
       <Board />
   <Card interactive={true} elevation={Elevation.TWO}>
-    <Authen />
+    <Auth />
     <Exam/>
   </Card>
     </Fragment>
