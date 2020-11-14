@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from "react";
-import { dia, ui, shapes } from '@clientio/rappid';
+import { dia, shapes, ui } from '@clientio/rappid';
 
 const Emulator = () => {
   const canvas = useRef(null);
@@ -9,6 +9,8 @@ const Emulator = () => {
 
     const paper = new dia.Paper({
       model: graph,
+      width: '100%',
+      height: '100vh',
       interactive: { linkMove: false },
       defaultConnectionPoint: {
         name: 'boundary',
@@ -27,8 +29,7 @@ const Emulator = () => {
 
     const scroller = new ui.PaperScroller({
       paper,
-      autoResizePaper: true,
-      cursor: 'grab'
+      cursor: 'grab',
     });
 
     canvas.current.appendChild(scroller.el);

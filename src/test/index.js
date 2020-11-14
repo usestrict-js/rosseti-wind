@@ -6,14 +6,24 @@ import { Link } from "react-router-dom";
 
 const Test = () => (
   <Fragment>
-    <Button intent={Intent.SUCCESS}>
-      <Link to="/emulator">Эмулятор</Link>
-    </Button>
-      <div>
+    <Link to="/emulator">
+      <Button
+        intent={Intent.SUCCESS}
+        style={{
+          fontSize: "18px",
+          position: "fixed",
+          top: "20px",
+          left: "20px",
+        }}
+      >
+        Эмулятор
+      </Button>
+    </Link>
+    <div>
       {data.map(({ id, question, variants }) => {
         return <Question variants={variants} text={question} id={id} />;
       })}
-      </div>
+    </div>
   </Fragment>
 );
 

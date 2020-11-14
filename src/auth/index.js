@@ -10,7 +10,7 @@ const Auth = () => (
       labelFor="text-input"
       labelInfo="(кириллицей)"
     >
-      <InputGroup id="fio-input" placeholder="Фамилия Имя Отчество" />
+      <InputGroup large id="fio-input" placeholder="Фамилия Имя Отчество" />
     </FormGroup>
 
     <FormGroup
@@ -19,10 +19,10 @@ const Auth = () => (
       labelFor="text-input"
       labelInfo="(только номер)"
     >
-      <InputGroup id="group-number" placeholder="номер Вашей группы" />
+      <InputGroup large id="group-number" placeholder="номер Вашей группы" />
     </FormGroup>
 
-    <Button icon="key-enter">
+    <Button large icon="key-enter">
       <Link to="/test">ВОЙТИ</Link>
     </Button>
   </Card>
