@@ -1,26 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { Button } from '@blueprintjs/core';
-import { Button, Card, Elevation } from "@blueprintjs/core";
-import {Exam} from "./exam";
-import {Authen} from "./authen";
-import {Tasks} from "./tasks";
-import {Devices} from "./devices";
-import {NetSettings} from "./netSettings";
-import {ItemSet} from "./itemSet";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Auth from "./auth";
+import Test from "./test";
+import Emulator from "./emulator";
 
-const Main = () =>
-    <Card interactive={true} elevation={Elevation.TWO}>
-        <Authen></Authen>
-        <Tasks></Tasks>
-        <Devices></Devices>
-        <NetSettings></NetSettings>
-        <ItemSet></ItemSet>
-        <Exam></Exam>
-
-</Card>
+const Main = () => (
+  <BrowserRouter>
+      <Switch>
+        <Route path="/" exact>
+          <Auth />
+        </Route>
+        <Route path="/emulator">
+          <Emulator />
+        </Route>
+        <Route path="/test">
+          <Test />
+        </Route>
+      </Switch>
+  </BrowserRouter>
+);
 
 const App = document.getElementById("app");
 
 ReactDOM.render(<Main />, App);
-

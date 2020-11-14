@@ -1,0 +1,21 @@
+@font-face {
+  font-family: ALS;
+  src: url("fonts/ALS Meringue.otf") format("opentype");
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "ALS";
+  font-size: 18px;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
