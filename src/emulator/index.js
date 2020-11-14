@@ -136,10 +136,10 @@ const Emulator = () => {
         console.log('type ', type, ' wire', wire);
         switch (type) {
           case 'БМРЗ 150':
-           return addBMRZ(10, 10);
+           return addBMRZ(10 + Math.random() * 100, 10 + Math.random() * 100);
           case 'GL 100':
           case 'CISCO 1000':
-            return addCommutator(10, 10);
+            return addCommutator(10 + Math.random() * 100, 10 + Math.random() * 100);
           case 'Медный кабель':
           case 'Витая пара RJ45':
             return setWire(type);
