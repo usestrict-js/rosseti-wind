@@ -24,6 +24,7 @@
     "@blueprintjs/core": "^3.35.0",
     "@clientio/rappid": "file:vendor/rappid-3.2.0.tgz",
     "jointjs": "^3.2.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
