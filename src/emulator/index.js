@@ -1,8 +1,9 @@
 import React, { Fragment, useRef, useEffect, useState } from "react";
 import { dia, shapes, ui, g, linkTools } from "@clientio/rappid";
-import DevicesMenu from "../devices";
+import DevicesMenu, { CUPRUM, RJ45 } from "./devices";
+import DeviceProp from './deviceProp';
 
-let currentWire = 'Медный кабель';
+let currentWire = CUPRUM;
 const getEventHandlerConfig = (graph) => ({
   "element:pointerdown": function (elementView, evt) {
     evt.data = elementView.model.position();
@@ -26,7 +27,10 @@ const getEventHandlerConfig = (graph) => ({
       elementAbove.position(evt.data.x, evt.data.y);
 
       // Create a connection between elements.
-      const wire = currentWire === 'Медный кабель' ? createConnectViaCuprum(graph) : createConnectViaRJ45(graph);
+      const wire =
+        currentWire === "Медный кабель"
+          ? createConnectViaCuprum(graph)
+          : createConnectViaRJ45(graph);
       const link = wire(elementAbove, elementBelow);
 
       // Add remove button to the link.
@@ -63,7 +67,6 @@ const initCanvas = (canvas) => {
   });
   const eventHandlerConfig = getEventHandlerConfig(graph);
   paper.on(eventHandlerConfig);
-
 
   const scroller = new ui.PaperScroller({
     paper,
@@ -181,7 +184,7 @@ const createConnectViaCuprum = (graph) => (block1, block2) => {
         },
         textAnchor: "middle",
         textVerticalAnchor: "middle",
-        text: "Медный кабель",
+        text: CUPRUM,
         fill: "white",
         fontSize: 12,
         fontWeight: "bold",
@@ -228,8 +231,8 @@ const Emulator = () => {
                 10 + Math.random() * 100,
                 10 + Math.random() * 100
               );
-            case "Медный кабель":
-            case "Витая пара RJ45":
+            case CUPRUM:
+            case RJ45:
               return setWire(type);
             default:
               return;
@@ -237,6 +240,7 @@ const Emulator = () => {
         }}
       />
       <div className="canvas" ref={canvas} />
+      <DeviceProp />
     </Fragment>
   );
 };

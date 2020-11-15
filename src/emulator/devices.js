@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Button, ButtonGroup } from "@blueprintjs/core";
 import PropTypes from "prop-types";
 
-const CUPRUM = "Медный кабель";
-const RJ45 = "Витая пара RJ45";
+export const CUPRUM = "Медный кабель";
+export const RJ45 = "Витая пара RJ45";
 
 const Devices = ({ onChange }) => {
-  const [wire, setWire] = useState("Медный кабель");
-  const isCuprumActive = wire === "Медный кабель";
-  const isRJ45Active = wire === "Витая пара RJ45";
+  const [wire, setWire] = useState(CUPRUM);
+  const isCuprumActive = wire === CUPRUM;
+  const isRJ45Active = wire === RJ45;
 
   return (
     <div className="devices-menu">
