@@ -217,7 +217,7 @@ const Emulator = () => {
   return (
     <Fragment>
       <DevicesMenu
-        onCreate={(type) => {
+        onChange={(type) => {
           console.log("type ", type, " wire", wire);
           switch (type) {
             case "БМРЗ 150":
