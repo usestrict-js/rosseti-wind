@@ -2,6 +2,7 @@ import React, { Fragment, useRef, useEffect, useState } from "react";
 import { dia, shapes, ui, g, linkTools } from "@clientio/rappid";
 import DevicesMenu, { CUPRUM, RJ45 } from "./devices";
 import DeviceProp from "./deviceProp";
+import TopPanel from "./topPanel";
 
 let currentWire = CUPRUM;
 const getEventHandlerConfig = (graph) => ({
@@ -260,6 +261,7 @@ const Emulator = () => {
       />
       <div className="canvas" ref={canvas} />
       <DeviceProp />
+      <TopPanel />
     </Fragment>
   );
 };
