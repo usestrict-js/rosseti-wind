@@ -175,7 +175,7 @@ const createConnectViaCuprum = (graph) => (block1, block2) => {
     ],
     attrs: {
       line: {
-        stroke: "#aaa",
+        stroke: "orange",
       },
       label: {
         textPath: {
@@ -185,7 +185,7 @@ const createConnectViaCuprum = (graph) => (block1, block2) => {
         textAnchor: "middle",
         textVerticalAnchor: "middle",
         text: "Медный кабель",
-        fill: "orange",
+        fill: "white",
         fontSize: 12,
         fontWeight: "bold",
       },
