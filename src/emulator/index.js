@@ -64,7 +64,6 @@ const initCanvas = (canvas) => {
   const eventHandlerConfig = getEventHandlerConfig(graph);
   paper.on(eventHandlerConfig);
 
-  const stencil = new ui.Stencil({ paper, width: 100, height: 100 });
 
   const scroller = new ui.PaperScroller({
     paper,
@@ -72,9 +71,7 @@ const initCanvas = (canvas) => {
   });
 
   canvas.current.appendChild(scroller.el);
-  canvas.current.appendChild(stencil.el);
   scroller.render().center();
-  stencil.render();
   return graph;
 };
 
