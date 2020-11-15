@@ -81,7 +81,7 @@ const initCanvas = (canvas) => {
 const createAddCommutator = (graph) => (x, y) => {
   const commutator = new shapes.standard.Rectangle({
     position: { x, y },
-    size: { width: 200, height: 50 },
+    size: { width: 600, height: 100 },
     attrs: {
       label: {
         text: "Коммутатор",
@@ -94,7 +94,7 @@ const createAddCommutator = (graph) => (x, y) => {
 const createAddBMRZ = (graph) => (x, y) => {
   const bmrz = new shapes.standard.Rectangle({
     position: { x, y },
-    size: { width: 300, height: 300 },
+    size: { width: 180, height: 180 },
     attrs: {
       label: {
         text: "Механотроника БМРЗ",
