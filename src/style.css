@@ -1,6 +1,5 @@
-@font-face {
-  font-family: ALS;
-  src: url("fonts/ALS Meringue.otf") format("opentype");
+html {
+  background-color: aliceblue;
 }
 
 .app {
@@ -8,14 +7,39 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-family: "ALS";
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .canvas {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 300px;
+  right: 300px;
   bottom: 0;
+  overflow: hidden;
+}
+
+.devices-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 300px;
+  padding: 20px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.device-prop-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  padding: 20px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  width: 300px;
+  box-sizing: border-box;
 }
