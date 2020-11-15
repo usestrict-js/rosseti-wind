@@ -1,7 +1,7 @@
 import React, { Fragment, useRef, useEffect, useState } from "react";
 import { dia, shapes, ui, g, linkTools } from "@clientio/rappid";
 import DevicesMenu, { CUPRUM, RJ45 } from "./devices";
-import DeviceProp from './deviceProp';
+import DeviceProp from "./deviceProp";
 
 let currentWire = CUPRUM;
 const getEventHandlerConfig = (graph) => ({
@@ -78,13 +78,26 @@ const initCanvas = (canvas) => {
   return graph;
 };
 
-const createAddCommutator = (graph) => (x, y) => {
+const createAddCommutatorGL100 = (graph) => (x, y) => {
   const commutator = new shapes.standard.Rectangle({
     position: { x, y },
     size: { width: 600, height: 100 },
     attrs: {
       label: {
-        text: "Коммутатор",
+        text: "Коммутатор GL 100",
+      },
+    },
+  });
+  commutator.addTo(graph);
+  return commutator;
+};
+const createAddCommutatorCISCO1000 = (graph) => (x, y) => {
+  const commutator = new shapes.standard.Rectangle({
+    position: { x, y },
+    size: { width: 600, height: 100 },
+    attrs: {
+      label: {
+        text: "Коммутатор CISCO 1000",
       },
     },
   });
@@ -200,12 +213,14 @@ const createConnectViaCuprum = (graph) => (block1, block2) => {
 const Emulator = () => {
   const canvas = useRef(null);
   const [wire, setWire] = useState("Медный кабель");
-  let addBMRZ, addCommutator;
+  let addBMRZ;
+  let addCommutatorGL100, addCommutatorCISCO1000;
   let connectViaRJ45, connectViaCuprum;
 
   useEffect(() => {
     const graph = initCanvas(canvas);
-    addCommutator = createAddCommutator(graph);
+    addCommutatorGL100 = createAddCommutatorGL100(graph);
+    addCommutatorCISCO1000 = createAddCommutatorCISCO1000(graph);
     addBMRZ = createAddBMRZ(graph);
     connectViaRJ45 = createConnectViaRJ45(graph);
     connectViaCuprum = createConnectViaCuprum(graph);
@@ -225,9 +240,13 @@ const Emulator = () => {
                 10 + Math.random() * 100,
                 10 + Math.random() * 100
               );
-            case "GL 100":
             case "CISCO 1000":
-              return addCommutator(
+              return addCommutatorCISCO1000(
+                10 + Math.random() * 100,
+                10 + Math.random() * 100
+              );
+            case "GL 100":
+              return addCommutatorGL100(
                 10 + Math.random() * 100,
                 10 + Math.random() * 100
               );
